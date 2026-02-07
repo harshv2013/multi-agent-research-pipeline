@@ -167,6 +167,8 @@ Total Iterations: 7
 ✓ Workflow completed successfully!
 ```
 
+![Agentic AI Demo 1](screenshots/demo1.png)
+![Agentic AI Demo 2](screenshots/demo2.png)
 ---
 
 ## 🛠️ Project Structure

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Agent AI Research Pipeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .poster {
+            width: 1920px;
+            height: 1080px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 35px 60px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+
+        .header .subtitle {
+            font-size: 24px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 17px;
+            color: #444;
+            font-style: italic;
+            padding: 0 100px;
+            margin-bottom: 20px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .architecture {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .architecture h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .agents-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .agent {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .agent:hover {
+            transform: translateY(-5px);
+        }
+
+        .agent-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .agent-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .agent-desc {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        .supervisor {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .supervisor .agent-name,
+        .supervisor .agent-desc {
+            color: white;
+        }
+
+        .arrow {
+            font-size: 24px;
+            color: #667eea;
+            text-align: center;
+            margin: 8px 0;
+        }
+
+        .features {
+            flex: 1;
+        }
+
+        .features h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .feature-item {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 18px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item:nth-child(2) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .feature-item:nth-child(3) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .feature-item:nth-child(4) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .feature-icon {
+            font-size: 26px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .tech-stack {
+            background: #2d3748;
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .tech-stack h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .tech-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tech-item {
+            text-align: center;
+        }
+
+        .tech-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 6px;
+        }
+
+        .tech-name {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .bottom-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .github-link {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            transition: transform 0.3s;
+        }
+
+        .github-link:hover {
+            transform: scale(1.05);
+            background: #000;
+        }
+
+        .footer-text {
+            font-size: 11px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .circle-1 {
+            width: 250px;
+            height: 250px;
+            background: #667eea;
+            top: -80px;
+            right: -80px;
+        }
+
+        .circle-2 {
+            width: 180px;
+            height: 180px;
+            background: #764ba2;
+            bottom: -40px;
+            left: -40px;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .poster {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
+
+        <div class="header">
+            <h1>Multi-Agent AI Research Pipeline</h1>
+            <div class="subtitle">Autonomous Intelligence at Work</div>
+        </div>
+
+        <div class="tagline">
+            "Four specialized agents working together to research, create, and refine high-quality content autonomously"
+        </div>
+
+        <div class="main-content">
+            <div class="left-column">
+                <div class="architecture">
+                    <h2>🏗️ System Architecture</h2>
+                    
+                    <div class="agents-container">
+                        <div class="agent supervisor">
+                            <div class="agent-icon">🎯</div>
+                            <div class="agent-name">Supervisor Agent</div>
+                            <div class="agent-desc">Orchestrates workflow & makes routing decisions</div>
+                        </div>
+                    </div>
+
+                    <div class="arrow">↓ ↓ ↓</div>
+
+                    <div class="agents-container">
+                        <div class="agent">
+                            <div class="agent-icon">🔍</div>
+                            <div class="agent-name">Researcher</div>
+                            <div class="agent-desc">Searches web via Tavily API & validates sources</div>
+                        </div>
+
+                        <div class="agent">
+                            <div class="agent-icon">✍️</div>
+                            <div class="agent-name">Content Creator</div>
+                            <div class="agent-desc">Generates professional content with citations</div>
+                        </div>
+
+                        <div class="agent">
+                            <div class="agent-icon">✅</div>
+                            <div class="agent-name">Reviewer</div>
+                            <div class="agent-desc">Validates quality & provides feedback</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h2>🛠️ Tech Stack</h2>
+                    <div class="tech-logos">
+                        <div class="tech-item">
+                            <div class="tech-logo">🦜</div>
+                            <div class="tech-name">LangGraph</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">☁️</div>
+                            <div class="tech-name">Azure OpenAI</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">🔎</div>
+                            <div class="tech-name">Tavily API</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">🐍</div>
+                            <div class="tech-name">Python 3.10+</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">✓</div>
+                            <div class="tech-name">Pydantic</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="features">
+                    <h2>✨ Key Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">🌐</div>
+                            <div class="feature-text">Real-time Web Search with Tavily API</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔄</div>
+                            <div class="feature-text">Iterative Feedback & Quality Control</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎯</div>
+                            <div class="feature-text">Production-Ready with Error Handling</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-text">Quality Scores 0.90+ Consistently</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">0.93</div>
+                    <div class="stat-label">Avg Quality Score</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Specialized Agents</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">60s</div>
+                    <div class="stat-label">Avg Execution Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Autonomous</div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <a href="https://github.com/yourusername/multi-agent-research-pipeline" class="github-link">
+                    ⭐ View on GitHub
+                </a>
+                <div class="footer-text">
+                    Built with LangGraph • Azure OpenAI • Tavily
+                </div>
+                <div class="footer-text">
+                    Production-ready multi-agent AI system
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
