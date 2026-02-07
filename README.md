@@ -7,6 +7,7 @@ A production-grade autonomous multi-agent system built with **LangGraph** and **
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
+![Agentic AI Poster](screenshots/poster.png)
 
 ## 🎯 Overview
 
