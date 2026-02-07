@@ -51,7 +51,7 @@ logs/
 outputs/
 output/
 results/
-*.png
+# *.png
 *.svg
 *.pdf
 *.dot
