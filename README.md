@@ -44,21 +44,20 @@ This system demonstrates advanced **Agentic AI** patterns with four specialized 
         ┌────────────┼────────────────┼──────────┐
         │            │                │          │
         ▼            ▼                ▼          │
-   ┌─────────┐ ┌──────────┐   ┌──────────┐     │
-   │RESEARCH │ │ CONTENT  │   │ REVIEWER │     │
-   │  AGENT  │ │ CREATOR  │   │  AGENT   │     │
-   │         │ │  AGENT   │   │          │     │
-   │• Tavily │ │• Generate│   │• Validate│     │
-   │  Search │ │  Content │   │• Score   │     │
-   │• Extract│ │• Citations│   │• Feedback│     │
-   └────┬────┘ └─────┬────┘   └─────┬────┘     │
-        │            │              │           │
-        └────────────┴──────────────┴───────────┘
+   ┌─────────┐ ┌──────────┐   ┌──────────┐       │
+   │RESEARCH │ │ CONTENT  │   │ REVIEWER │       │
+   │  AGENT  │ │ CREATOR  │   │  AGENT   │       │
+   │         │ │  AGENT   │   │          │       │
+   │• Tavily │ │• Generate│   │• Validate│       │
+   │  Search │ │  Content │   │• Score   │       │
+   │• Extract│ │•Citations│   │• Feedback│       │
+   └────┬────┘ └─────┬────┘   └─────┬────┘       │
+        │            │              │            │
+        └────────────┴──────────────┴────────────┘
                      │
                      ▼
             ┌─────────────────┐
             │  FINAL OUTPUT   │
-            │  Quality: 0.92  │
             └─────────────────┘
 ```
 
@@ -75,7 +74,7 @@ This system demonstrates advanced **Agentic AI** patterns with four specialized 
 ### **Installation**
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/multi-agent-research-pipeline.git
+git clone https://github.com/harshv2013/multi-agent-research-pipeline
 cd multi-agent-research-pipeline
 
 # Create virtual environment
@@ -375,8 +374,10 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## 📧 Contact
 
-**Your Name** - [@yourhandle](https://twitter.com/yourhandle) - your.email@example.com
+**Harsh Vardhan** - harsh2013@gmail.com
 
-**Project Link**: [https://github.com/yourusername/multi-agent-research-pipeline](https://github.com/yourusername/multi-agent-research-pipeline)
+**Linkedin** https://www.linkedin.com/in/harsh-vardhan-60b6aa106/
+
+**Project Link**: [https://github.com/harshv2013/multi-agent-research-pipeline](https://github.com/harshv2013/multi-agent-research-pipeline)
 
 **Built with ❤️ using LangGraph, Azure OpenAI, and Python**
